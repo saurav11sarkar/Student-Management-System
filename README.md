@@ -64,7 +64,7 @@ Before running the project, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/student-management-system.git
+git clone https://github.com/saurav11sarkar/Student-Management-System.git
 cd student-management-system
 ```
 
