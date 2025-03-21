@@ -1,0 +1,226 @@
+{
+  "info": {
+    "_postman_id": "a1def4be-38f8-4e54-a310-edf42dc9f208",
+    "name": "student_management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38675905"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "singin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//     \"username\": \"john_does\",\r\n//     \"password\": \"securePass123\",\r\n//     \"role\": \"teacher\"\r\n// }\r\n{\r\n    \"username\": \"saurav\",\r\n    \"password\": \"securePass123\",\r\n    \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/singin",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["singin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"saurav\",\r\n    \"password\": \"securePass123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "students",
+      "item": [
+        {
+          "name": "create student",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Michael Johnson\",\r\n    \"age\": 17,\r\n    \"grade\": 11,\r\n    \"student_photo\": \"https://example.com/michael_photo.jpg\",\r\n    \"student_description\": \"A sports enthusiast and team player.\",\r\n    \"createdBy\": \"67dc462568978d47f8114b61\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["students", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update student",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Michael Johnson\",\r\n    \"age\": 17,\r\n    \"grade\": \"B\",\r\n    \"student_photo\": \"https://example.com/michael_photo.jpg\",\r\n    \"student_description\": \"A sports enthusiast and team player.\",\r\n    \"createdBy\": \"67dc462568978d47f8114b61\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/67dc52c38583ae0d62cf8dc5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["students", "67dc52c38583ae0d62cf8dc5"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all student",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["students", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "B",
+                  "disabled": true
+                },
+                {
+                  "key": "age",
+                  "value": "16",
+                  "disabled": true
+                },
+                {
+                  "key": "sort",
+                  "value": "grade",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "fields",
+                  "value": "name,age,grade",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get single student",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/67dc52c38583ae0d62cf8dc5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["students", "67dc52c38583ae0d62cf8dc5"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete student",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/students/67dc4b4ea72b8a47a462b24c",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["students", "67dc4b4ea72b8a47a462b24c"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
